@@ -19,8 +19,9 @@ jobs:
     - name: install packge
       run: |
         sudo apt update
-        sudo apt install libusb-1.0-0-dev
-        sudo ln -s $(dpkg -L libusb-1.0-0-dev | grep \.so) /usr/lib/libusb-1.0.so
+        git clone https://github.com/libusb/libusb.git
+        cd libusb
+        ./configure && make && sudo make install；
         
         git clone https://github.com/PortAudio/portaudio.git
         cd portaudio
