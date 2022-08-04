@@ -23,10 +23,7 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: |
-        mkdir "${{ runner.workspace }}/build"
-        cd "${{ runner.workspace }}/build"
-        cmake --build ${{github.workspace}}/AndroidUsbAudioSource --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
