@@ -23,7 +23,9 @@ jobs:
         mkdir libusb
         tar -jxvf  libusb-1.0.26.tar.bz2 -C ./libusb
         cd libusb
-        ./configure && make && sudo make install；
+        configure
+        make
+        sudo make install；
         
         git clone https://github.com/PortAudio/portaudio.git
         cd portaudio
