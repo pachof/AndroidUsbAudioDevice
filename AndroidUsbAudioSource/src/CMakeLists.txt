@@ -1,6 +1,7 @@
 ﻿find_package(fmt CONFIG REQUIRED)
-find_package(PortAudio CONFIG REQUIRED)
-find_package(libusb CONFIG REQUIRED)
+ find_package(libusb CONFIG REQUIRED)
+ set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib/lib/cmake/portaudio/")
+ find_package(PortAudio CONFIG REQUIRED)
 
 add_executable(AndroidUsbAudioSource
 	"android_usb_audio_source.cpp"
