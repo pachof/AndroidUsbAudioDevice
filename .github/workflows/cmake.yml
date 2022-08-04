@@ -22,13 +22,12 @@ jobs:
         sudo apt install libusb-1.0-0-dev
         sudo ln -s $(dpkg -L libusb-1.0-0-dev | grep \.so) /usr/lib/libusb-1.0.so
         
-        #git clone https://github.com/PortAudio/portaudio.git
-        #cd portaudio
-        #mkdir build
-        #cd build
-        #cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/install_location
-        #sudo make install
-        sudo apt-get install libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0
+        git clone https://github.com/PortAudio/portaudio.git
+        cd portaudio
+        mkdir build
+        cd build
+        cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr/lib
+        sudo make install
 
         cd ${{github.workspace}}
         git clone https://github.com/fmtlib/fmt.git
