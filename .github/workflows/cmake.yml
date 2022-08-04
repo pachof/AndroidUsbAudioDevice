@@ -37,11 +37,9 @@ jobs:
         git clone https://github.com/libusb/libusb.git
         sudo apt-get install automake    
         sudo apt-get install libtool
-        sudo autoreconf -ivf
-        cd libusb
-        mkdir build
+        sudo autoreconf -ivf 
         sudo apt-get install libudev-dev
-        cd build
+        cd libusb
         ./configure configure.ac
         make Makefile.am
         sudo make install
