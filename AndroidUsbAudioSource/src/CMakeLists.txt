@@ -1,5 +1,5 @@
 ﻿find_package(fmt CONFIG REQUIRED)
-find_package(PORTAUDIO CONFIG REQUIRED)
+find_package(PortAudio CONFIG REQUIRED)
 find_package(libusb CONFIG REQUIRED)
 
 add_executable(AndroidUsbAudioSource
