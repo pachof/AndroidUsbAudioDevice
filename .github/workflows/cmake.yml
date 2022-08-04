@@ -42,8 +42,8 @@ jobs:
         mkdir build
         sudo apt-get install libudev-dev
         cd build
-        ./configure
-        make
+        ./configure configure.ac
+        make Makefile.am
         sudo make install
   
     - name: Configure CMake
