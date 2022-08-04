@@ -1,5 +1,5 @@
 ﻿find_package(fmt CONFIG REQUIRED)
- find_package(LibUSB CONFIG REQUIRED)
+ find_package(libusb-1.0 CONFIG REQUIRED)
  set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "/usr/lib/lib/cmake/portaudio/")
  find_package(PortAudio CONFIG REQUIRED)
 
