@@ -19,13 +19,13 @@ jobs:
     - name: install packge
       run: |
         sudo apt update
-        wget https://github.com/libusb/libusb/releases/download/v1.0.26/libusb-1.0.26.tar.bz2
         mkdir libusb
-        tar -jxvf  libusb-1.0.26.tar.bz2 -C ./libusb
         cd libusb
-        configure
+        wget https://github.com/libusb/libusb/releases/download/v1.0.26/libusb-1.0.26.tar.bz2
+        tar -jxvf  libusb-1.0.26.tar.bz2
+        ./configure
         make
-        sudo make install；
+        sudo make install
         
         git clone https://github.com/PortAudio/portaudio.git
         cd portaudio
