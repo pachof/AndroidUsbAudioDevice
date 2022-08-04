@@ -35,10 +35,15 @@ jobs:
         
         cd ${{github.workspace}}
         git clone https://github.com/libusb/libusb.git
+        sudo apt-get install automake    
+        sudo apt-get install libtool
+        sudo autoreconf -ivf
         cd libusb
         mkdir build
+        sudo apt-get install libudev-dev
         cd build
-        cmake ..
+        ./configure
+        make
         sudo make install
   
     - name: Configure CMake
