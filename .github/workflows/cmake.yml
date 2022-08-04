@@ -18,6 +18,10 @@ jobs:
     
     - name: install packge
       run: |
+        sudo apt update
+        sudo apt install libusb-1.0-0-dev
+        sudo ln -s $(dpkg -L libusb-1.0-0-dev | grep \.so) /usr/lib/libusb-1.0.so
+        
         git clone https://github.com/PortAudio/portaudio.git
         cd portaudio
         mkdir build
@@ -31,17 +35,6 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        sudo make install
-        
-        cd ${{github.workspace}}
-        git clone https://github.com/libusb/libusb.git
-        sudo apt-get install automake    
-        sudo apt-get install libtool
-        sudo autoreconf -ivf 
-        sudo apt-get install libudev-dev
-        cd libusb
-        ./configure configure.ac
-        make Makefile.am
         sudo make install
   
     - name: Configure CMake
