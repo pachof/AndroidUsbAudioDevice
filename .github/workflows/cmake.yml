@@ -21,8 +21,7 @@ jobs:
       run: |
         cd AndroidUsbAudioSource
         mkdir build
-        cd build
-        cmake --build  --config ${{env.BUILD_TYPE}}
+        cmake --build build --config ${{env.BUILD_TYPE}}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
